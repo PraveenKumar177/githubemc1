@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Square from "./Square";
+import InputClr from "./InputClr";
 
 function App() {
+  const [color, setColor] = useState("");
+  const [hexa, setHexa] = useState("");
+  const [isDarkText, setDarkText] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Color Identifier</h1>
+      <Square
+      color = {color}
+      hexa = {hexa}
+      isDarkText = {isDarkText}
+      />
+      <InputClr 
+      color = {color}
+      setColor = {setColor}
+      setHexa = {setHexa}
+      isDarkText = {isDarkText}
+      setDarkText = {setDarkText}z
+      />
     </div>
   );
 }
